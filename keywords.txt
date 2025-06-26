@@ -1,0 +1,3 @@
+TimeNTP	KEYWORD1
+wait	KEYWORD2
+getTime	KEYWORD2
