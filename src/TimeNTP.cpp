@@ -18,8 +18,8 @@ void TimeNTP::wait(void) {
 #elif defined(ESP32)
     configTime(0, 0, server);
     setenv("TZ", tz, 1);
-#endif  // ESP
     tzset();
+#endif  // ESP
     time_t now = time(nullptr);
     while (now < 8 * 3600 * 2) {
         delay(500);

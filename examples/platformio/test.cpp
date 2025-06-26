@@ -54,7 +54,7 @@ void wifi_setup(void) {
 
 void setup() {
     Serial.begin(baud);
-    delay(5000);
+    delay(delayLong*5);
     Serial.println("Starting");
     pinMode(LED_BUILTIN, OUTPUT);
     wifi_setup();
