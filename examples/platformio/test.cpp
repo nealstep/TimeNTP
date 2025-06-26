@@ -2,6 +2,8 @@
 
 #if defined(ESP8266)
 #include <ESP8266WiFi.h>
+#elif defined(ESP32)
+#include <WiFi.h>
 #else
 #error "Not supported"
 #endif  // ESP8266
@@ -52,6 +54,7 @@ void wifi_setup(void) {
 
 void setup() {
     Serial.begin(baud);
+    delay(5000);
     Serial.println("Starting");
     pinMode(LED_BUILTIN, OUTPUT);
     wifi_setup();
@@ -70,7 +73,7 @@ void loop() {
     currentMillis = millis();
     if (currentMillis - previousMillis >= interval) {
         Serial.println("Loop check");
-        Serial.println(timeNTP.getTime());
+        Serial.print(timeNTP.getTime());
         blink();
         switch (WiFi.status()) {
             case WL_NO_SSID_AVAIL:

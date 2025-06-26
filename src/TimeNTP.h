@@ -8,6 +8,9 @@ class TimeNTP {
     TimeNTP(const char *ntpServer, const char *timeZone);
     void wait(void);
     char *getTime(void);
+private:
+    const char *server;
+    const char *tz;
 };
 
 #endif  // BASE_H
